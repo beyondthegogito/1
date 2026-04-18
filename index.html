@@ -3,226 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOID BOOKS | Existential & Philosophical Library</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <title>Beyond the Gogito Library | Intellectual Masterpieces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent: #b89c7d; /* Muted Gold/Old Paper */
-            --bg: #0a0a0a;
-            --card: #151515;
-            --text: #e0e0e0;
+            --primary: #121212;
+            --accent: #c5a059; /* Gold accent like premium libraries */
+            --bg: #f4f4f4;
+            --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: #333; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* Sophisticated Navbar */
+        /* Navigation */
         nav {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1.5rem 8%;
+            background: var(--white);
+            padding: 1rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #333;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
-            color: var(--accent);
-            letter-spacing: 3px;
-        }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 2px; color: var(--primary); }
+        .logo span { color: var(--accent); }
 
-        .nav-links a {
-            color: #888;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
+        .menu a { text-decoration: none; color: #555; margin-left: 20px; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
+        .menu a:hover { color: var(--accent); }
 
-        .nav-links a:hover { color: var(--accent); }
-
-        /* Minimalist Hero */
+        /* Hero */
         .hero {
-            height: 40vh;
+            height: 350px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            color: white;
             text-align: center;
-            border-bottom: 1px solid #222;
-            background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
         }
 
-        .hero h1 { 
-            font-family: 'Cinzel', serif; 
-            font-size: 3rem; 
-            margin-bottom: 10px; 
-            color: #fff;
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-style: italic; color: var(--accent); }
+
+        /* Sections */
+        .section-title {
+            padding: 50px 8% 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
         }
 
-        .hero p { 
-            font-family: 'Playfair Display', serif; 
-            font-style: italic; 
-            color: var(--accent); 
-            font-size: 1.1rem;
-        }
-
-        /* The Grid */
-        .container { padding: 60px 8%; }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 30px;
+            padding: 20px 8% 50px;
         }
 
-        /* Philosophical Book Card */
-        .book-card {
-            background: var(--card);
-            padding: 15px;
-            transition: 0.5s;
-            border: 1px solid transparent;
-        }
-
-        .book-card:hover {
-            border-color: var(--accent);
-            background: #1a1a1a;
-            transform: translateY(-5px);
-        }
-
-        .img-container {
-            width: 100%;
-            height: 340px;
+        /* Modern Book Card */
+        .card {
+            background: var(--white);
+            border-radius: 4px;
             overflow: hidden;
-            background: #222;
-            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            cursor: pointer;
+            border: 1px solid #eee;
         }
 
-        .book-card img {
+        .card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); border-color: var(--accent); }
+        .card img { width: 100%; height: 270px; object-fit: cover; }
+        .card-body { padding: 15px; text-align: center; }
+        .card-body h3 { font-size: 0.9rem; color: #222; margin-bottom: 5px; height: 40px; overflow: hidden; }
+        .card-body p { color: var(--accent); font-weight: bold; font-size: 1rem; }
+
+        /* Modal Overlay */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--white);
+            max-width: 800px;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: 0.5s;
+            display: flex;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
         }
 
-        .book-card:hover img { filter: grayscale(0%); }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
-        .info h3 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 1.2rem; 
-            margin-bottom: 5px; 
-            color: #fff;
-        }
+        .close { position: absolute; right: 20px; top: 15px; font-size: 2rem; cursor: pointer; color: #333; }
+        .m-img { width: 40%; background: #eee; }
+        .m-img img { width: 100%; height: 100%; object-fit: cover; }
+        .m-text { width: 60%; padding: 40px; }
+        .m-text h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 10px; }
+        .m-text h4 { color: var(--accent); margin-bottom: 20px; font-weight: 400; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .m-text p { font-size: 0.9rem; line-height: 1.7; color: #666; margin-bottom: 25px; }
+        .m-price { font-size: 1.4rem; font-weight: bold; color: var(--primary); display: block; margin-bottom: 20px; }
 
-        .author { 
-            display: block; 
-            font-size: 0.8rem; 
-            text-transform: uppercase; 
-            color: var(--accent); 
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
+        .btn { background: var(--primary); color: white; padding: 12px 30px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; transition: 0.3s; }
+        .btn:hover { background: var(--accent); }
 
-        .price { font-weight: bold; color: #fff; }
-
-        /* Footer Credits */
+        /* Footer */
         footer {
-            padding: 80px 5%;
-            background: #000;
+            background: #0a0a0a;
+            color: #777;
+            padding: 60px 8%;
             text-align: center;
-            border-top: 1px solid #222;
+            border-top: 3px solid var(--accent);
         }
 
-        .dev-box {
-            border: 1px solid #333;
-            padding: 30px;
-            display: inline-block;
-        }
+        .dev-names { color: var(--white); font-family: 'Cinzel', serif; font-size: 1.2rem; margin: 15px 0; letter-spacing: 2px; }
+        .dev-names span { color: var(--accent); }
 
-        .dev-tag { font-size: 0.7rem; letter-spacing: 4px; color: #555; margin-bottom: 15px; }
-        .names { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--accent); }
-        .academic-info { font-size: 0.8rem; color: #444; margin-top: 10px; }
+        @media (max-width: 768px) {
+            .modal-content { flex-direction: column; max-height: 90vh; overflow-y: auto; }
+            .m-img, .m-text { width: 100%; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">VOID BOOKS</div>
-        <div class="nav-links">
-            <a href="#">Philosophy</a>
-            <a href="#">Literature</a>
-            <a href="#">Essays</a>
+        <div class="logo">BEYOND THE <span>GOGITO</span></div>
+        <div class="menu">
+            <a href="#philosophy">Philosophy</a>
+            <a href="#classics">Classics</a>
+            <a href="#manga">Manga</a>
         </div>
     </nav>
 
     <header class="hero">
-        <h1>BEYOND THE ABSURD</h1>
-        <p>"To be is to do" — Socrates</p>
+        <h1>BEYOND THE GOGITO LIBRARY</h1>
+        <p>"To think is to exist in the void of knowledge"</p>
     </header>
 
-    <main class="container">
-        <div class="grid" id="main-grid">
+    <h2 class="section-title" id="philosophy">Philosophy & Existentialism</h2>
+    <div class="grid" id="philosophy-grid"></div>
+
+    <h2 class="section-title" id="classics">World Classics</h2>
+    <div class="grid" id="classics-grid"></div>
+
+    <h2 class="section-title" id="manga">Manga & Graphic Novels</h2>
+    <div class="grid" id="manga-grid"></div>
+
+    <div class="modal" id="bookModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="m-img"><img id="modalImg" src=""></div>
+            <div class="m-text">
+                <h2 id="modalTitle"></h2>
+                <h4 id="modalAuthor"></h4>
+                <p id="modalDesc"></p>
+                <span class="m-price" id="modalPrice"></span>
+                <button class="btn">Add to Collection</button>
             </div>
-    </main>
+        </div>
+    </div>
 
     <footer>
-        <div class="dev-box">
-            <div class="dev-tag">PROJECT CURATED BY</div>
-            <div class="names">AMINE DRGHOUI & CHARAFEDDINE EL AOUYNI</div>
-            <div class="academic-info">FLSHM UNIVERSITY | English Studies Department | 2026</div>
-        </div>
+        <p>PROJECT CURATED BY THE ENGLISH STUDIES DEPARTMENT</p>
+        <div class="dev-names"><span>CHARAFEDDINE EL AOUYNI</span> & <span>AMINE DRGHOUI</span></div>
+        <p>FACULTÉ DES LETTRES ET DES SCIENCES HUMAINES MOHAMMEDIA (FLSHM)</p>
+        <p style="margin-top: 20px; font-size: 0.7rem;">© 2026 Beyond the Gogito. All Intellectual Rights Reserved.</p>
     </footer>
 
     <script>
-        // دقة في الاختيار: أعظم الفلاسفة والروائيين الفلسفيين
-        const masters = [
-            { title: "Crime and Punishment", author: "Fyodor Dostoevsky", price: "$18.99", img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500" },
-            { title: "The Metamorphosis", author: "Franz Kafka", price: "$12.50", img: "https://images.unsplash.com/photo-1543004218-2bc117a12821?w=500" },
-            { title: "The Stranger", author: "Albert Camus", price: "$14.00", img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500" },
-            { title: "Thus Spoke Zarathustra", author: "Friedrich Nietzsche", price: "$20.00", img: "https://images.unsplash.com/photo-1589998059171-988d887df646?w=500" },
-            { title: "The Trial", author: "Franz Kafka", price: "$15.00", img: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=500" },
-            { title: "Phenomenology of Spirit", author: "G.W.F. Hegel", price: "$25.99", img: "https://images.unsplash.com/photo-1532012197367-2d5970d3b593?w=500" },
-            { title: "The Myth of Sisyphus", author: "Albert Camus", price: "$13.00", img: "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=500" },
-            { title: "Being and Nothingness", author: "Jean-Paul Sartre", price: "$22.50", img: "https://images.unsplash.com/photo-1524578271613-d550eabcad51?w=500" }
-        ];
+        const libraryData = {
+            philosophy: [
+                { title: "The Stranger", author: "Albert Camus", price: "85 DH", img: "https://m.media-amazon.com/images/I/81shYySInpL.jpg", desc: "A landmark of 20th-century literature, Camus's story of a man who refuses to conform to society's expectations." },
+                { title: "The Metamorphosis", author: "Franz Kafka", price: "70 DH", img: "https://m.media-amazon.com/images/I/81Mcl88-y6L.jpg", desc: "The terrifying yet absurd story of Gregor Samsa, who wakes up transformed into a giant insect." },
+                { title: "Crime and Punishment", author: "Fyodor Dostoevsky", price: "110 DH", img: "https://m.media-amazon.com/images/I/719f6XvSIdL.jpg", desc: "A psychological masterpiece exploring the mental anguish and moral dilemmas of Rodion Raskolnikov." },
+                { title: "Thus Spoke Zarathustra", author: "Friedrich Nietzsche", price: "130 DH", img: "https://m.media-amazon.com/images/I/917vT9uL7VL.jpg", desc: "A philosophical novel that deals with the ideas of the 'Ubermensch' and the eternal recurrence." }
+            ],
+            classics: [
+                { title: "1984", author: "George Orwell", price: "90 DH", img: "https://m.media-amazon.com/images/I/71kxa1-0caL.jpg", desc: "A haunting vision of a dystopian future where Big Brother is always watching." },
+                { title: "The Great Gatsby", author: "F. Scott Fitzgerald", price: "95 DH", img: "https://m.media-amazon.com/images/I/81QuEGw8VPL.jpg", desc: "A classic portrait of the Jazz Age and the elusive nature of the American Dream." }
+            ],
+            manga: [
+                { title: "Berserk Vol. 1", author: "Kentaro Miura", price: "160 DH", img: "https://m.media-amazon.com/images/I/91D07epNE9L.jpg", desc: "The dark fantasy epic follows Guts, the Black Swordsman, in his quest for revenge." },
+                { title: "Vagabond Vol. 1", author: "Takehiko Inoue", price: "185 DH", img: "https://m.media-amazon.com/images/I/81T6H9v3f3L.jpg", desc: "A philosophical take on the life of Miyamoto Musashi, Japan's greatest swordsman." },
+                { title: "Goodnight Punpun", author: "Inio Asano", price: "140 DH", img: "https://m.media-amazon.com/images/I/81SSt2K6f4L.jpg", desc: "A coming-of-age story dealing with deep existential dread and human relationships." }
+            ]
+        };
 
-        const grid = document.getElementById('main-grid');
-
-        // تكرار ذكي ليصبح المجموع 1000 كتاب
-        function loadLibrary() {
-            for (let i = 0; i < 125; i++) {
-                masters.forEach(book => {
+        function populate(cat, gridId) {
+            const grid = document.getElementById(gridId);
+            // Replicating to create a large library effect
+            for(let i=0; i<35; i++) {
+                libraryData[cat].forEach(book => {
                     const el = document.createElement('div');
-                    el.className = 'book-card';
-                    el.innerHTML = `
-                        <div class="img-container">
-                            <img src="${book.img}" alt="${book.title}">
-                        </div>
-                        <div class="info">
-                            <span class="author">${book.author}</span>
-                            <h3>${book.title}</h3>
-                            <span class="price">${book.price}</span>
-                        </div>
-                    `;
+                    el.className = 'card';
+                    el.innerHTML = `<img src="${book.img}"> <div class="card-body"><h3>${book.title}</h3><p>${book.price}</p></div>`;
+                    el.onclick = () => openModal(book);
                     grid.appendChild(el);
                 });
             }
         }
 
-        loadLibrary();
+        function openModal(book) {
+            document.getElementById('modalTitle').innerText = book.title;
+            document.getElementById('modalAuthor').innerText = book.author;
+            document.getElementById('modalDesc').innerText = book.desc;
+            document.getElementById('modalPrice').innerText = book.price;
+            document.getElementById('modalImg').src = book.img;
+            document.getElementById('bookModal').style.display = 'flex';
+        }
+
+        function closeModal() { document.getElementById('bookModal').style.display = 'none'; }
+        window.onclick = (e) => { if(e.target == document.getElementById('bookModal')) closeModal(); }
+
+        populate('philosophy', 'philosophy-grid');
+        populate('classics', 'classics-grid');
+        populate('manga', 'manga-grid');
     </script>
 </body>
 </html>
